@@ -115,7 +115,7 @@ pub struct Output {
     pub stderr: Vec<u8>,
 }
 
-fn relative_command_path(command: &Path) -> crate::Result<PathBuf> {
+pub fn relative_command_path(command: &Path) -> crate::Result<PathBuf> {
     match platform::current_exe()?.parent() {
         #[cfg(windows)]
         Some(exe_dir) => {
